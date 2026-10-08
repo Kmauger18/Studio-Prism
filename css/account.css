@@ -1,0 +1,126 @@
+/* Studio Prism — comptes (connexion / inscription), header connecté, administration, offre Pro Entreprise.
+   Chargé après css/style.css : mêmes variables, même sobriété (bordures fines, angles peu arrondis). */
+
+/* ------------------------------------------------------------------ header : état connecté */
+.hc .hacc{padding:8px 14px;font-size:14px;white-space:nowrap}
+.nv-acc{display:none}
+@media(min-width:981px) and (max-width:1240px){.hc .hacc{padding:8px 10px;font-size:13px}}
+@media(max-width:980px){
+  .hc .hacc{display:none}
+  .nv-acc{display:block;font-weight:600;color:var(--pt)}
+  .nv-acc + .nv-acc{margin-top:-4px}
+}
+
+/* ------------------------------------------------------------------ pages Compte Studio Prism */
+.acc-side{display:block}
+.acc-brand{display:flex;align-items:center;gap:14px;padding-bottom:18px;margin-bottom:4px;border-bottom:1px solid var(--line)}
+.acc-brand img{height:64px;width:auto;display:block;flex:none}
+.acc-brand b{display:block;font:700 20px/1.2 Inter,system-ui,sans-serif;color:var(--nuit)}
+.acc-brand small{display:block;font-size:12.5px;color:var(--mut);margin-top:2px}
+.acc-pts{margin-top:14px}
+.acc-main h1{font-size:clamp(30px,3.6vw,48px);margin:8px 0 16px}
+.acc-main .lead{max-width:none;margin-bottom:20px}
+.acc-note{margin:0 0 18px;padding:12px 14px;border-left:3px solid var(--turq);background:var(--bg-secondary);font-size:14px;color:var(--ink)}
+
+.acc-f{margin:0}
+.acc-f label{margin-top:12px}
+.acc-h{margin:4px 0 0;font-size:13px;color:var(--mut)}
+.acc-f .mut{font-weight:400}
+
+.acc-kind{display:grid;grid-template-columns:1fr 1fr;gap:12px;min-width:0;margin:0 0 4px;padding:0;border:0}
+.acc-kind legend{padding:0;margin-bottom:6px;font-size:13px;font-weight:600}
+.acc-card{display:flex;align-items:flex-start;gap:12px;margin:0;padding:14px;border:1px solid var(--line);border-radius:4px;background:var(--bg);cursor:pointer;font-weight:400;transition:border-color .2s,background-color .2s,box-shadow .2s}
+.acc-card:hover{border-color:var(--cyan)}
+.acc-card input{flex:none;width:auto;min-height:0;margin:3px 0 0;accent-color:var(--prism)}
+.acc-card b{display:block;font-size:15px;font-weight:600}
+.acc-card small{display:block;margin-top:2px;font-size:13px;line-height:1.35;color:var(--mut)}
+.acc-card.on{border-color:var(--prism);box-shadow:inset 0 0 0 1px var(--prism);background:color-mix(in srgb,var(--prism) 5%,var(--bg))}
+.acc-card:focus-within{outline:3px solid #6fd3d3;outline-offset:2px}
+
+.acc-co{margin-top:10px;padding-top:2px;border-top:1px solid var(--line)}
+.acc-co[hidden]{display:none}
+.acc-f select{appearance:auto}
+
+@media(max-width:520px){.acc-kind{grid-template-columns:1fr}.acc-brand img{height:52px}}
+
+/* ------------------------------------------------------------------ offre Pro Entreprise (page « Passer à Pro ») */
+.pcs.pcs3{grid-template-columns:repeat(3,minmax(0,1fr));align-items:stretch}
+.pc.ent{border-color:var(--turq);box-shadow:inset 0 3px 0 var(--turq);display:flex;flex-direction:column}
+.pc.ent:hover{border-color:var(--turq);box-shadow:inset 0 3px 0 var(--turq),0 14px 30px rgba(7,27,85,.1)}
+.pc.ent .chips{margin:8px 0 6px}
+.pc.ent .chip{min-width:44px;justify-content:center}
+.pc.ent ul{flex:1}
+.pc.ent .btn{align-self:flex-start}
+@media(max-width:1100px){.pcs.pcs3{grid-template-columns:1fr}}
+
+/* ------------------------------------------------------------------ administration */
+.adm .w{max-width:1280px}
+.adm .lead{max-width:760px;margin-bottom:22px}
+.adm-stats{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;margin:0 0 20px}
+.adm-stat{display:flex;flex-direction:column;gap:2px;padding:16px 18px;border:1px solid var(--line);border-radius:4px;background:var(--card)}
+.adm-n{font:700 30px/1.1 Inter,system-ui,sans-serif;color:var(--nuit)}
+.adm-l{font-size:13px;font-weight:600;color:var(--mut)}
+
+.adm-bar{display:grid;grid-template-columns:minmax(220px,2fr) repeat(4,minmax(0,1fr)) auto;gap:0 12px;align-items:end;max-width:none;padding:6px 20px 18px}
+.adm-bar label{margin-top:12px}
+.adm-rs .btn{margin:0;white-space:nowrap}
+#adm-info{margin:16px 0 8px;min-height:20px}
+#adm-more{margin-top:16px}
+
+.adm-tw{position:relative;overflow-x:auto;border:1px solid var(--line);border-radius:4px;background:var(--bg)}
+.adm-t{width:100%;min-width:1040px;border-collapse:collapse;font-size:14px}
+.adm-t th{padding:10px 12px;border-bottom:1px solid var(--line);background:var(--card);text-align:left;font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--mut);vertical-align:bottom;white-space:nowrap}
+.adm-t td{padding:12px;border-bottom:1px solid var(--line);vertical-align:top}
+.adm-t tbody tr:last-child td{border-bottom:0}
+.adm-t tbody tr:hover{background:color-mix(in srgb,var(--prism) 4%,transparent)}
+.adm-t small{display:block;margin-top:2px;font-size:12.5px;color:var(--mut);overflow-wrap:anywhere}
+.adm-t td b{font-weight:600}
+.adm-t th:first-child,.adm-t td:first-child{min-width:230px}
+.adm-d .adm-v{white-space:nowrap}
+.adm-v{min-width:0}
+.adm-v > b{display:block}
+.adm-act{text-align:right;white-space:nowrap}
+.adm-act .btn{margin:0;padding:7px 14px;font-size:14px}
+.adm-mail,.adm-co{overflow-wrap:anywhere}
+.adm-co{margin-top:4px}
+
+.acc-me{max-width:640px}
+
+/* badges */
+.bd{display:inline-block;padding:2px 10px;border:1px solid var(--line);border-radius:99px;background:var(--bg);color:var(--ink);font:600 12px/1.6 Inter,system-ui,sans-serif;white-space:nowrap}
+.bd-free{background:var(--card);color:var(--mut)}
+.bd-pro{border-color:var(--prism);background:color-mix(in srgb,var(--prism) 8%,#fff);color:#075f94}
+.bd-ent{border-color:var(--turq);background:color-mix(in srgb,var(--turq) 10%,#fff);color:#0d6666}
+.bd-admin{border-color:var(--nuit);background:var(--nuit);color:#fff}
+.bd-user,.bd-kind{background:var(--bg)}
+.bd-ok{border-color:#a7d7bb;background:#eef8f2;color:#14683a}
+.bd-off{border-color:#e6b4ae;background:#fdf1ef;color:#9a2a1f}
+
+@media(max-width:1100px){
+  .adm-bar{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .adm-q{grid-column:1/-1}
+  .adm-rs{grid-column:1/-1}
+  .adm-rs .btn{width:100%;margin-top:14px}
+}
+@media(max-width:900px){
+  .adm-stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .adm-stat:first-child{grid-column:1/-1}
+  .adm-bar{grid-template-columns:repeat(2,minmax(0,1fr));padding:6px 16px 16px}
+  /* tableau → cartes */
+  .adm-tw{border:0;background:none;overflow:visible}
+  .adm-t{min-width:0}
+  .adm-t td:first-child{min-width:0}
+  .adm-t thead{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+  .adm-t,.adm-t tbody,.adm-t tr,.adm-t td{display:block}
+  .adm-t tbody tr,.adm-t tbody tr:hover{margin-bottom:12px;padding:6px 0;border:1px solid var(--line);border-radius:4px;background:var(--bg)}
+  .adm-t td,.adm-t tbody tr:last-child td{display:grid;grid-template-columns:116px minmax(0,1fr);gap:10px;align-items:start;padding:8px 14px;border:0}
+  .adm-t td::before{content:attr(data-label);font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--mut);padding-top:2px}
+  .adm-t td.adm-act{display:block;margin-top:4px;padding:10px 14px 8px;border-top:1px solid var(--line);text-align:left}
+  .adm-t td.adm-act::before{content:none}
+  .adm-act .btn{width:100%;text-align:center}
+}
+@media(max-width:480px){
+  .adm-bar{grid-template-columns:1fr}
+  .adm-t td,.adm-t tbody tr:last-child td{grid-template-columns:104px minmax(0,1fr)}
+  .adm-n{font-size:26px}
+}
